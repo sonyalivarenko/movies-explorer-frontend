@@ -1,0 +1,27 @@
+.header-mobile {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header-mobile__button {
+  background-image: url(../../../../images/header-nav.svg);
+  width: 44px;
+  height: 44px;
+  background-color: #fff;
+  border: none;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.header-mobile__button:hover {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 665px) {
+  .header-mobile__button {
+    width: 40px;
+    height: 43px;
+    background-size: 85%;
+    background-position: center;
+  }
+}
