@@ -30,12 +30,10 @@ export default function SavedMovies(props) {
       setSearchText(searchText);
       setCheckboxValue(checkboxValue);
       if (checkboxValue && searchText) {
-        console.log(1)
         setFoundMovies(props.savedMovies.filter((movie) =>
         movie.nameRU.toLowerCase().includes(searchText.toLowerCase()) && movie.duration <= 40))
-      } 
+      }
       if (searchText && !checkboxValue) {
-        console.log(2)
         setFoundMovies(props.savedMovies.filter((movie) =>
         movie.nameRU.toLowerCase().includes(searchText.toLowerCase())
       ));

@@ -1,6 +1,4 @@
-import { useState, useEffect } from "react";
 import "./FilterCheckbox.css";
-
 
 //компонент, отрисовывающий checkbox
 export default function FilterCheckbox(props) {

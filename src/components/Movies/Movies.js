@@ -14,8 +14,7 @@ export default function Movies(props) {
   const defaultSearchText = localStorage.getItem('searchText') ?? '';
   const defaultFoundMovies =
     JSON.parse(localStorage.getItem('foundMovies')) ?? [];
-  const defaultCheckboxValue =
-    localStorage.getItem('checkboxValue') ?? false;
+  const defaultCheckboxValue = localStorage.getItem('checkboxValue') === 'true'
 
   const [foundMovies, setFoundMovies] = useState(defaultFoundMovies);
   const [searchText, setSearchText] = useState(defaultSearchText);
