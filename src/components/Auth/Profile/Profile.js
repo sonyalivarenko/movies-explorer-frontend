@@ -29,7 +29,6 @@ const [isActive, setIsActive] = useState(false);
   }, [isProfileFormOpen])
 
   function handleChangeName(e) {
-    console.log(name)
     setName(e.target.value);
     if (e.target.value === currentUser.name) {
       setIsActive(false)
@@ -40,6 +39,11 @@ const [isActive, setIsActive] = useState(false);
 
   function handleChangeEmail(e) {
     setEmail(e.target.value);
+    if (e.target.value === currentUser.email) {
+      setIsActive(false)
+    } else {
+      setIsActive(true)
+    }
   }
 
   function handleSubmit(e) {

@@ -28,7 +28,6 @@ export default function Login(props) {
     const { email, password } = values;
     mainApi.authorize(email, password)
       .then((data) => {
-        console.log(data)
         if (data.token) {
           props.handleLogin();
           navigate("/movies")
