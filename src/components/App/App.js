@@ -101,6 +101,7 @@ function App() {
     localStorage.removeItem('checkboxValue');
     setCurrentUser(null)
     setLoggedIn(false);
+    navigate('/')
   }
 
     function handleUpdateUserInfo(res) {
