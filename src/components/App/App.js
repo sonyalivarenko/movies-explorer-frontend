@@ -86,7 +86,7 @@ function App() {
       .catch ((err) => {
       localStorage.removeItem('token');
       localStorage.removeItem('foundMovies');
-      localStorage.removeItem('searchTextn');
+      localStorage.removeItem('searchText');
       localStorage.removeItem('checkboxValue');
       setCurrentUser(null);
       console.error(err);    
@@ -97,7 +97,7 @@ function App() {
   function signOut() {
     localStorage.removeItem('token');
     localStorage.removeItem('foundMovies');
-    localStorage.removeItem('searchTextn');
+    localStorage.removeItem('searchText');
     localStorage.removeItem('checkboxValue');
     setCurrentUser(null)
     setLoggedIn(false);
