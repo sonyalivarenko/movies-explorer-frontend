@@ -15,7 +15,7 @@ export default function FilterCheckbox(props) {
       <input className="checkbox__input-invisible"
              type="checkbox" 
              name="checkbox-film" 
-             onChange={props.onChange}
+             onClick={props.onChange}
              />
       <span className="checkbox__input-visible" />
       <span className="checkbox__label">Короткометражки</span>

@@ -9,7 +9,7 @@ import MessageError from "./MessageError/MessageError";
 
 export default function Movies(props) {
 
-  const [movies, setMovies] = useState(null);
+  const [movies, setMovies] = useState([]);
 
   const defaultSearchText = localStorage.getItem('searchText') ?? '';
   const defaultFoundMovies =
@@ -40,11 +40,12 @@ export default function Movies(props) {
     localStorage.setItem('foundMovies', JSON.stringify(foundMovies));
     localStorage.setItem('searchText', searchText);
     localStorage.setItem('checkboxValue', checkboxValue);
+    console.log(checkboxValue)
   }, [foundMovies, searchText, checkboxValue]);
   
   function handleSearchFormSubmit(searchText, checkboxValue) {
     setSearchText(searchText);
-    //setCheckboxValue(checkboxValue)
+    setCheckboxValue(checkboxValue)
     getMovies();
     if (checkboxValue && searchText) {
       setFoundMovies(movies.filter((movie) =>
@@ -59,8 +60,8 @@ export default function Movies(props) {
     }  */
   }
 
-function handleCheckboxChange(value) {
-    setCheckboxValue(value);
+function handleCheckboxChange() {
+    setCheckboxValue(!checkboxValue);
   }
 
   function handleMovieClick(movie, isSaved) {
@@ -91,7 +92,7 @@ function handleCheckboxChange(value) {
                                             Подождите немного и попробуйте ещё раз" />
                       ) : isLoading ? (
                         <Preloader />
-                      ) : ((foundMovies.length === 0) && (movies !== null)) ? (
+                      ) : ((foundMovies.length === 0) && (movies.length !== 0)) ? (
                         <MessageError text="Ничего не найдено" />
                       ) : (
                           <MoviesCardList movies={foundMovies} 
