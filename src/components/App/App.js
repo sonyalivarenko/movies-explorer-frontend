@@ -133,7 +133,7 @@ function App() {
                      onUpdateUser={handleUpdateUserInfo}
                      loggedIn={loggedIn} />
           </ProtectedRouteElement>} />
-          <Route path="/404" element={<Error404 />} />
+          <Route path="*" element={<Error404 />} />
         </Routes>
         {width < 769 && <HeaderNavPopup isOpen={isHeaderPopupOpen} onClose={closePopup} />}
       </CurrentUserContext.Provider>
