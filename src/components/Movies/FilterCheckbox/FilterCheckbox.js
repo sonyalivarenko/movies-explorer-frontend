@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
 import "./FilterCheckbox.css";
 
+
+//компонент, отрисовывающий checkbox
 export default function FilterCheckbox(props) {
 
+  
   //let isChecked = {inactive:props.checked};
 
   /* function handleChangeValueCheckbox(e) {
@@ -15,8 +18,8 @@ export default function FilterCheckbox(props) {
       <input className="checkbox__input-invisible"
              type="checkbox" 
              name="checkbox-film" 
-             onClick={props.onChange}
-             />
+             onChange={props.onChange}
+             checked={props.checked} />
       <span className="checkbox__input-visible" />
       <span className="checkbox__label">Короткометражки</span>
     </label>

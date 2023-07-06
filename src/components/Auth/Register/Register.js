@@ -7,14 +7,14 @@ export default function Register(props) {
 
   const [values, setValues] = useState({});
   const [error, setError] = useState({});
-  const [isActive, setIsActive] = useState(true);
+  const [isActive, setIsActive] = useState(false);
 
   function handleChangeUser(e) {
     const {name, value} = e.target
     const error = e.target.validationMessage;
     setValues((values) => ({...values, [name]: value}));
     setError((errors) => ({...errors, [name]: error}))
-    if (!e.target.validity.valid) {
+    if (!e.target.validity.valid || values.name===undefined || values.email===undefined || values.password===undefined) {
       setIsActive(false)
     } else {
       setIsActive(true)

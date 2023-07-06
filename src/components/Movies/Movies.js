@@ -40,8 +40,16 @@ export default function Movies(props) {
     localStorage.setItem('foundMovies', JSON.stringify(foundMovies));
     localStorage.setItem('searchText', searchText);
     localStorage.setItem('checkboxValue', checkboxValue);
-    console.log(checkboxValue)
   }, [foundMovies, searchText, checkboxValue]);
+
+  function handleCheckboxChange(value) {
+    setCheckboxValue(value);
+/*     if (checkboxValue1 === 'true') {
+      setIsTrue(true)
+    } else {
+      setIsTrue(false)
+    } */
+  }
   
   function handleSearchFormSubmit(searchText, checkboxValue) {
     setSearchText(searchText);
@@ -58,10 +66,6 @@ export default function Movies(props) {
 /*     if (!searchText && !checkboxValue) {
       setFoundMovies([])
     }  */
-  }
-
-function handleCheckboxChange() {
-    setCheckboxValue(!checkboxValue);
   }
 
   function handleMovieClick(movie, isSaved) {

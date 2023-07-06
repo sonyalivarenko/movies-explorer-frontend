@@ -7,7 +7,7 @@ export default function Login(props) {
 
   const [values, setValues] = useState({});
   const [error, setError] = useState({});
-  const [isActive, setIsActive] = useState(true);
+  const [isActive, setIsActive] = useState(false);
   
   const navigate = useNavigate();
 
@@ -16,7 +16,7 @@ export default function Login(props) {
     const error = e.target.validationMessage;
     setValues((values) => ({...values, [name]: value}));
     setError((errors) => ({...errors, [name]: error}))
-    if (!e.target.validity.valid) {
+    if (!e.target.validity.valid || values.email===undefined || values.password===undefined) {
       setIsActive(false)
     } else {
       setIsActive(true)
