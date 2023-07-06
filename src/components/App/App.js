@@ -89,8 +89,10 @@ function App() {
       localStorage.removeItem('searchText');
       localStorage.removeItem('checkboxValue');
       setCurrentUser(null);
-      console.error(err);    
+         
     })
+  } else {
+    navigate('/');
   }
 }
 
