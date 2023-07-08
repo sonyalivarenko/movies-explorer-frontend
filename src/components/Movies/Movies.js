@@ -43,6 +43,12 @@ export default function Movies(props) {
 
   function handleCheckboxChange(value) {
     setCheckboxValue(value);
+    setMovies([]);
+  }
+
+  function handleInputChange(value) {
+    setSearchText(value);
+    setMovies([])
   }
 
   useEffect(() => {
@@ -54,7 +60,7 @@ export default function Movies(props) {
       setFoundMovies(movies.filter((movie) =>
       movie.nameRU.toLowerCase().includes(searchText.toLowerCase())
     ));}
-  }, [checkboxValue, foundMovies.length, movies, searchText])
+  }, [checkboxValue, movies, searchText])
   
   function handleSearchFormSubmit(searchText, checkboxValue) {
     setSearchText(searchText);
@@ -80,6 +86,7 @@ export default function Movies(props) {
         <SearchForm isSaved={false} 
                     onSubmit={handleSearchFormSubmit}
                     onCheckboxChange={handleCheckboxChange}
+                    onInputChange={handleInputChange}
                     checkboxValue={checkboxValue}
                     searchText={searchText}
                     setSearchText={setSearchText}
@@ -90,7 +97,7 @@ export default function Movies(props) {
                                             Подождите немного и попробуйте ещё раз" />
                       ) : isLoading ? (
                         <Preloader />
-                      )  : ((foundMovies.length === 0) && (movies.length === 0))  ? (
+                      )  : ((foundMovies.length === 0) && (movies.length !== 0))  ? (
                         <MessageError text="Ничего не найдено" />
                       ) : (
                           <MoviesCardList movies={foundMovies} 

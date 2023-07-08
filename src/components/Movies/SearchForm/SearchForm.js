@@ -20,7 +20,7 @@ export default function SearchForm(props) { //компонент формы по
   }, [checkboxValue, props.onCheckboxChange, props.checkboxValue, props]);
 
   function handleChangeFilm(e) {
-    props.setSearchText(e.target.value);
+    props.onInputChange(e.target.value);
     if (!e.target.validity.valid) {
       setErrorFilm('Нужно ввести ключевое слово')
     } else {
