@@ -45,12 +45,7 @@ export default function Movies(props) {
     setCheckboxValue(value);
   }
 
-
-  
-  function handleSearchFormSubmit(searchText, checkboxValue) {
-    setSearchText(searchText);
-    setCheckboxValue(checkboxValue)
-    getMovies();
+  useEffect(() => {
     if (checkboxValue && searchText) {
       setFoundMovies(movies.filter((movie) =>
       movie.nameRU.toLowerCase().includes(searchText.toLowerCase()) && movie.duration <= 40))
@@ -59,6 +54,12 @@ export default function Movies(props) {
       setFoundMovies(movies.filter((movie) =>
       movie.nameRU.toLowerCase().includes(searchText.toLowerCase())
     ));}
+  }, [checkboxValue, foundMovies.length, movies, searchText])
+  
+  function handleSearchFormSubmit(searchText, checkboxValue) {
+    setSearchText(searchText);
+    setCheckboxValue(checkboxValue)
+    getMovies();
   }
 
   function handleMovieClick(movie, isSaved) {
