@@ -1,0 +1,121 @@
+.techs {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background: #F5F5F5;
+  padding-left: 70px;
+  padding-right: 70px;
+}
+
+.techs__title {
+  margin-top: 90px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 58px;
+  text-align: center;
+  letter-spacing: -0.04em;
+  margin-bottom: 26px;
+}
+
+.techs__subtitle {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: -0.04em;
+  max-width: 460px;
+  margin: auto;
+}
+
+.techs__table {
+  display: grid;
+  grid-template-columns: repeat(7, 90px);
+  gap: 10px;
+  margin-top: 100px;
+  justify-content: center;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.techs__cell {
+  list-style-type: none;
+  width: 90px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  letter-spacing: -0.04em;
+  background-color: #E8E8E8;
+  border-radius: 10px;
+  padding-top: 21px;
+  padding-bottom: 22px;
+}
+
+@media screen and (max-width: 1000px) {
+  .techs {
+    padding-top: 90px;
+    padding-bottom: 90px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .techs__title {
+    margin-top: 80px;
+    margin-bottom: 22px;
+  }
+
+  .techs__subtitle {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .techs__table {
+    margin-top: 83px;
+    margin-left: 0;
+    margin-right: 0;
+    grid-template-columns: repeat(auto-fit, 84px);
+  }
+}
+
+@media screen and (max-width: 665px) {
+  .techs {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .techs__title {
+    margin-top: 60px;
+    margin-bottom: 24px;
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  .techs__table {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+    margin-top: 50px;
+  }
+
+  .techs__subtitle {
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .techs__cell {
+    font-size: 12px;
+    line-height: 15px;
+    width: 84px;
+  }
+
+  .techs__cell:nth-of-type(1n) {
+    justify-self: flex-end;
+  }
+
+  .techs__cell:nth-of-type(2n) {
+    justify-self: flex-start;
+  }
+}
