@@ -11,6 +11,9 @@ export default function Profile(props) {
 
 const [isProfileFormOpen, setIsProfileFormOpen] = useState(false);
 const [isActive, setIsActive] = useState(false);
+const [isMessageAboutSave, setIsMessageAboutSave] = useState(
+  false,
+);
 
   function handleProfileClick() {
     setIsProfileFormOpen(true);
@@ -48,18 +51,24 @@ const [isActive, setIsActive] = useState(false);
 
   function handleSubmit(e) {
     e.preventDefault();
-    handleUpdateUser(name,email)
+    handleUpdateUser(name,email);
   }
 
   function handleUpdateUser(name,email) {
     mainApi.setProfileInfo({name, email})
     .then((res) => {
       props.onUpdateUser(res);
+      showMessageAboutSave();
     })
     .catch((err) => {
       console.log(err); 
     });
     closeProfileForm()
+  }
+
+  function showMessageAboutSave() {
+    setIsMessageAboutSave(true);
+    setTimeout(() => setIsMessageAboutSave(false), 2000);
   }
 
   return (
@@ -77,7 +86,8 @@ const [isActive, setIsActive] = useState(false);
           : <ProfileStatic isOpen={handleProfileClick} 
                            signOut={props.signOut} 
                            name={name} 
-                           email={email} />}
+                           email={email}
+                           isMessageAboutSave={isMessageAboutSave} />}
         </section>
       </main>
     </>

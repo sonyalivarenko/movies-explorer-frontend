@@ -12,6 +12,7 @@ export default function ProfileStatic(props) {
           <p className="profile__label">E-mail</p>
           <p className="profile__input">{props.email}</p>
         </div>
+      {props.isMessageAboutSave && <p className="profile__message-save">Сохранено</p>}
       <button type="button" className="profile__edit profile__button" onClick={props.isOpen}>Редактировать</button>
       <button type="button" className="profile__exit profile__button" onClick={props.signOut}>Выйти из аккаунта</button>
     </>

@@ -43,12 +43,9 @@ export default function Movies(props) {
 
   function handleCheckboxChange(value) {
     setCheckboxValue(value);
-/*     if (checkboxValue1 === 'true') {
-      setIsTrue(true)
-    } else {
-      setIsTrue(false)
-    } */
   }
+
+
   
   function handleSearchFormSubmit(searchText, checkboxValue) {
     setSearchText(searchText);
@@ -62,9 +59,6 @@ export default function Movies(props) {
       setFoundMovies(movies.filter((movie) =>
       movie.nameRU.toLowerCase().includes(searchText.toLowerCase())
     ));}
-/*     if (!searchText && !checkboxValue) {
-      setFoundMovies([])
-    }  */
   }
 
   function handleMovieClick(movie, isSaved) {
@@ -95,7 +89,7 @@ export default function Movies(props) {
                                             Подождите немного и попробуйте ещё раз" />
                       ) : isLoading ? (
                         <Preloader />
-                      ) : ((foundMovies.length === 0) && (movies.length !== 0)) ? (
+                      )  : ((foundMovies.length === 0) && (movies.length === 0))  ? (
                         <MessageError text="Ничего не найдено" />
                       ) : (
                           <MoviesCardList movies={foundMovies} 

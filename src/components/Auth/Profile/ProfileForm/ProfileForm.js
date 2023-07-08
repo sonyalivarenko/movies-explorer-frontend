@@ -1,11 +1,10 @@
-import { useEffect } from "react";
 import "../Profile.css";
 
 export default function ProfileForm(props) {
 
   const isActive = props.isActive;
  
-  function handleSubmit(e) {
+  function handleSubmit(e, isSave) {
     props.onSubmit(e);
   }
 
